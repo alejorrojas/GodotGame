@@ -27,14 +27,14 @@ animations = [ {
 "name": "Correr",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Saltar",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "Morir",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Saltar",
 "speed": 5.0
 } ]
 

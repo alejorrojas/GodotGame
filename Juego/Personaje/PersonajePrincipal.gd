@@ -103,11 +103,23 @@ func caminar_pc():
 		movimiento.x = velocidad.x
 		animacion.play("Correr")
 		
-	else:
-		if Input.is_action_just_pressed("mov_izquierda"):
-			animacion.flip_h = true
-			movimiento.x = -velocidad.x
-			animacion.play("Correr")
+	else: 
+		if Input.is_action_just_released("mov_derecha"):
+			animacion.stop()
+			animacion.play("Idle")
+			movimiento.x = 0 
+			
+		else:
+			if Input.is_action_just_pressed("mov_izquierda"):
+				animacion.flip_h = true
+				movimiento.x = -velocidad.x
+				animacion.play("Correr")
+			
+			else: 
+				if Input.is_action_just_released("mov_izquierda"):
+					animacion.stop()
+					animacion.play("Idle")
+					movimiento.x = 0 
 	
 	
 	
