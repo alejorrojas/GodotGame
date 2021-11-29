@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Volon.wav-be17758fca232e09e97e1198dabfe98a.sample"
+
+[deps]
+
+source_file="res://Recursos/Sfx/Volon.wav"
+dest_files=[ "res://.import/Volon.wav-be17758fca232e09e97e1198dabfe98a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

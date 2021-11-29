@@ -1,0 +1,188 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Recursos/PNG/Enemies/wingMan3.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/PNG/Enemies/wingMan2.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/PNG/Enemies/wingMan4.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/PNG/Enemies/wingMan1.png" type="Texture" id=4]
+[ext_resource path="res://Juego/Enemigos/Enemigo2.gd" type="Script" id=5]
+[ext_resource path="res://Recursos/PNG/Enemies/wingMan5.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Sfx/Volon.wav" type="AudioStream" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "volar",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39, 31.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 48.125, 5 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Morir"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -2 ), Vector2( 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("Morir")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DetectarPisoton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Volar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 4, 3, 2, 1, 0, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -3 ), Vector2( 0, 113 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DetectarJugador:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 21.25 ), Vector2( 0, -100 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DetectarPisoton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -100 ) ]
+}
+
+[node name="Volon" type="Area2D"]
+scale = Vector2( 0.8, 0.8 )
+z_index = 35
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -2 )
+frames = SubResource( 1 )
+animation = "volar"
+
+[node name="DetectarJugador" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0.27451, 0.815686, 0.0784314, 1 )
+position = Vector2( 0, 21.25 )
+shape = SubResource( 2 )
+
+[node name="DetectarPisoton" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="ColisionadorPisoton" type="CollisionShape2D" parent="DetectarPisoton"]
+modulate = Color( 0.521569, 0.0352941, 0.54902, 1 )
+position = Vector2( 1.69407e-21, -50 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Volar"
+anims/Morir = SubResource( 6 )
+anims/RESET = SubResource( 5 )
+anims/Volar = SubResource( 4 )
+
+[node name="Morir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.157
+pitch_scale = 0.35
+
+[connection signal="body_entered" from="." to="." method="_on_Enemigo2_body_entered"]
+[connection signal="body_entered" from="DetectarPisoton" to="." method="_on_DetectarPisoton_body_entered"]

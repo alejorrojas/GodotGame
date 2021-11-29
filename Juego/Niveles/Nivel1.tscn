@@ -1,0 +1,293 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Juego/Personaje/PersonajePrincipal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Plataforma1/PlataformaCesped.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Plataforma1/PlataformaRosa.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Recursos/PNG/Background/bg_layer1.png" type="Texture" id=4]
+[ext_resource path="res://Juego/Elementos/Pinchos.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Enemigos/Enemigo1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Enemigos/Enemigo2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Juego/Enemigos/Enemigo3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Recursos/PNG/Background/bg_layer2.png" type="Texture" id=9]
+[ext_resource path="res://Recursos/PNG/Background/bg_layer3.png" type="Texture" id=10]
+[ext_resource path="res://Recursos/Sfx/GameBackground.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Recursos/PNG/Background/bg_layer4.png" type="Texture" id=12]
+
+[node name="Nivel1" type="Node2D"]
+position = Vector2( 45, -6 )
+
+[node name="Background" type="Node" parent="."]
+
+[node name="FondoPrincipal" type="Sprite" parent="Background"]
+position = Vector2( -2855, -338 )
+scale = Vector2( 9.85693, 6.64185 )
+z_index = -300
+z_as_relative = false
+texture = ExtResource( 4 )
+
+[node name="ArbolesMorados" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.815686, 0.992157, 1 )
+position = Vector2( 351, -530.2 )
+scale = Vector2( 0.8, 1 )
+z_index = -250
+texture = ExtResource( 12 )
+
+[node name="ArbolesMorados3" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.815686, 0.992157, 1 )
+position = Vector2( 1976, -529.2 )
+scale = Vector2( 0.8, 1 )
+z_index = -250
+texture = ExtResource( 12 )
+
+[node name="ArbolesMorados4" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.815686, 0.992157, 1 )
+position = Vector2( 3605, -524 )
+scale = Vector2( 0.8, 1 )
+z_index = -250
+texture = ExtResource( 12 )
+
+[node name="ArbolesMorados2" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.815686, 0.992157, 0.980392 )
+position = Vector2( -1271.8, -535 )
+scale = Vector2( 0.8, 1 )
+z_index = -250
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo1" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( -1097, -740.4 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo2" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( -2126, -728 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo3" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( -93, -741.4 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo4" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( 922, -740.4 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo5" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( 1943, -736.4 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="ArbolesFondo6" type="Sprite" parent="Background"]
+modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
+position = Vector2( 2963, -728.8 )
+scale = Vector2( 0.5, 0.9 )
+z_index = -260
+texture = ExtResource( 12 )
+
+[node name="Nubes1" type="Sprite" parent="Background"]
+position = Vector2( 148, 154 )
+scale = Vector2( 12.0424, 5.69527 )
+z_index = -270
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="PrimerCapa" type="Sprite" parent="Background"]
+modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
+position = Vector2( 727, -7 )
+scale = Vector2( 2, 1.5 )
+z_index = -140
+z_as_relative = false
+texture = ExtResource( 10 )
+
+[node name="PrimerCapa2" type="Sprite" parent="Background"]
+modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
+position = Vector2( 4749, -23 )
+scale = Vector2( 2, 1.5 )
+z_index = -140
+z_as_relative = false
+texture = ExtResource( 10 )
+
+[node name="PrimerCapa3" type="Sprite" parent="Background"]
+modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
+position = Vector2( -3363, -14 )
+scale = Vector2( 2, 1.5 )
+z_index = -140
+z_as_relative = false
+texture = ExtResource( 10 )
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Pinchon1" parent="Enemigos" instance=ExtResource( 6 )]
+position = Vector2( 836, 141 )
+velocidad = 150.0
+
+[node name="Pinchon2" parent="Enemigos" instance=ExtResource( 6 )]
+position = Vector2( 1599, -288 )
+
+[node name="Pinchon3" parent="Enemigos" instance=ExtResource( 6 )]
+position = Vector2( -514, -580 )
+
+[node name="Volon1" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( 1130, 177 )
+
+[node name="Volon2" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( 410, -618 )
+
+[node name="Volon3" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( -508, -708 )
+
+[node name="Volon4" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( -325, -564 )
+
+[node name="Volon5" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( 1317, -329 )
+
+[node name="Trueno1" parent="Enemigos" instance=ExtResource( 8 )]
+position = Vector2( 2040, -521 )
+
+[node name="Trueno2" parent="Enemigos" instance=ExtResource( 8 )]
+position = Vector2( -523, -247 )
+
+[node name="Pinchos" type="Node" parent="."]
+
+[node name="Pinchos2" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 1270, 232 )
+scale = Vector2( 1, 0.6 )
+
+[node name="Pinchos8" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 1920, 181 )
+
+[node name="Pinchos3" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 1276, 248 )
+rotation = -3.14159
+scale = Vector2( 1, 0.6 )
+
+[node name="Pinchos1" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( -309, 537 )
+rotation = -3.55271e-14
+
+[node name="Pinchos4" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( -226, 534 )
+rotation = -3.55271e-14
+
+[node name="Pinchos5" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( -138, 534 )
+rotation = -3.55271e-14
+
+[node name="Pinchos6" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 356, 417 )
+rotation = -3.55271e-14
+
+[node name="Pinchos7" parent="Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 872, -374 )
+rotation = -3.55271e-14
+
+[node name="Plataformas" type="Node" parent="."]
+
+[node name="PlataformaCesped" parent="Plataformas" instance=ExtResource( 2 )]
+position = Vector2( 145, 666 )
+scale = Vector2( 3, 3 )
+
+[node name="PlataformaCesped2" parent="Plataformas" instance=ExtResource( 2 )]
+position = Vector2( 509, 314 )
+
+[node name="PlataformaCesped3" parent="Plataformas" instance=ExtResource( 2 )]
+position = Vector2( 1536, 260 )
+scale = Vector2( 0.7, 0.3 )
+
+[node name="PlataformaRosa4" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.976471, 0.745098, 0.745098, 1 )
+position = Vector2( 1071, -324 )
+
+[node name="PlataformaRosa11" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.854902, 0.85098, 0.34902, 1 )
+position = Vector2( 809, -370 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaRosa12" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.411765, 0.34902, 0.34902, 1 )
+position = Vector2( 618, -456 )
+
+[node name="PlataformaRosa15" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.592157, 0.94902, 0.866667, 1 )
+position = Vector2( -773, -433 )
+
+[node name="PlataformaRosa17" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.52549, 0.517647, 0.662745, 1 )
+position = Vector2( -833, -162 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaRosa16" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.745098, 0.384314, 0.909804, 1 )
+position = Vector2( -998, -341 )
+
+[node name="PlataformaRosa14" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( -494, -509 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaRosa1" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 291, 421 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaRosa3" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 842, 233 )
+scale = Vector2( 1, 0.3 )
+
+[node name="PlataformaRosa5" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 1271, 242 )
+
+[node name="PlataformaRosa6" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 1919, 189 )
+scale = Vector2( 0.6, 0.3 )
+
+[node name="PlataformaRosa8" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 1995, -120 )
+scale = Vector2( 0.8, 0.3 )
+
+[node name="PlataformaRosa10" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 2167, 130 )
+
+[node name="PlataformaRosa18" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.623529, 0.654902, 0.901961, 1 )
+position = Vector2( 2343, -12 )
+
+[node name="PlataformaRosa9" parent="Plataformas" instance=ExtResource( 3 )]
+modulate = Color( 0.94902, 0.8, 0.639216, 1 )
+position = Vector2( 1648, -228 )
+scale = Vector2( 1, 0.3 )
+
+[node name="PlataformaRosa13" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( 136, -466 )
+scale = Vector2( 1.5, 0.3 )
+
+[node name="PlataformaRosa19" parent="Plataformas" instance=ExtResource( 3 )]
+position = Vector2( -438, 63 )
+scale = Vector2( 1.5, 0.3 )
+
+[node name="Personajes" type="Node" parent="."]
+
+[node name="PersonajePrincipal" parent="Personajes" instance=ExtResource( 1 )]
+position = Vector2( 70, 226 )
+velocidad = Vector2( 400, 900 )
+aceleracion_caida = 280
+impulso_fuerza = 3200
+
+[node name="Rayos" type="Node" parent="."]
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 11 )
+volume_db = -11.556
+autoplay = true

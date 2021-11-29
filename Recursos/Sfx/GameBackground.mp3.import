@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GameBackground.mp3-c78c8ea5ec6bba9e65a24d76abd2f2aa.mp3str"
+
+[deps]
+
+source_file="res://Recursos/Sfx/GameBackground.mp3"
+dest_files=[ "res://.import/GameBackground.mp3-c78c8ea5ec6bba9e65a24d76abd2f2aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
