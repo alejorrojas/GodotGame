@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PickUp-Moneda.wav-3168b6959cc6c88b3cb4c28176f9e1f5.sample"
+
+[deps]
+
+source_file="res://Recursos/Sfx/PickUp-Moneda.wav"
+dest_files=[ "res://.import/PickUp-Moneda.wav-3168b6959cc6c88b3cb4c28176f9e1f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

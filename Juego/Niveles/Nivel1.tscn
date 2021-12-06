@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Juego/Personaje/PersonajePrincipal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Plataforma1/PlataformaCesped.tscn" type="PackedScene" id=2]
@@ -12,119 +12,22 @@
 [ext_resource path="res://Recursos/PNG/Background/bg_layer3.png" type="Texture" id=10]
 [ext_resource path="res://Recursos/Sfx/GameBackground.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Recursos/PNG/Background/bg_layer4.png" type="Texture" id=12]
+[ext_resource path="res://Juego/Elementos/MonedasBronce.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Juego/Elementos/MonedasOro.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Juego/Elementos/MonedasPlata.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Juego/Elementos/PlataformaImpulso.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Juego/Elementos/Powerups/PowerUpSalto.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Juego/Elementos/Powerups/PowerUpVolar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Juego/Plataforma1/PlataformaTrampa.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=20]
+[ext_resource path="res://Juego/Elementos/Portal.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Juego/Elementos/ZanahoriaLLave.tscn" type="PackedScene" id=22]
 
-[node name="Nivel1" type="Node2D"]
-position = Vector2( 45, -6 )
-
-[node name="Background" type="Node" parent="."]
-
-[node name="FondoPrincipal" type="Sprite" parent="Background"]
-position = Vector2( -2855, -338 )
-scale = Vector2( 9.85693, 6.64185 )
-z_index = -300
-z_as_relative = false
-texture = ExtResource( 4 )
-
-[node name="ArbolesMorados" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.815686, 0.992157, 1 )
-position = Vector2( 351, -530.2 )
-scale = Vector2( 0.8, 1 )
-z_index = -250
-texture = ExtResource( 12 )
-
-[node name="ArbolesMorados3" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.815686, 0.992157, 1 )
-position = Vector2( 1976, -529.2 )
-scale = Vector2( 0.8, 1 )
-z_index = -250
-texture = ExtResource( 12 )
-
-[node name="ArbolesMorados4" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.815686, 0.992157, 1 )
-position = Vector2( 3605, -524 )
-scale = Vector2( 0.8, 1 )
-z_index = -250
-texture = ExtResource( 12 )
-
-[node name="ArbolesMorados2" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.815686, 0.992157, 0.980392 )
-position = Vector2( -1271.8, -535 )
-scale = Vector2( 0.8, 1 )
-z_index = -250
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo1" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( -1097, -740.4 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo2" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( -2126, -728 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo3" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( -93, -741.4 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo4" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( 922, -740.4 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo5" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( 1943, -736.4 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="ArbolesFondo6" type="Sprite" parent="Background"]
-modulate = Color( 1, 0.898039, 0.996078, 0.980392 )
-position = Vector2( 2963, -728.8 )
-scale = Vector2( 0.5, 0.9 )
-z_index = -260
-texture = ExtResource( 12 )
-
-[node name="Nubes1" type="Sprite" parent="Background"]
-position = Vector2( 148, 154 )
-scale = Vector2( 12.0424, 5.69527 )
-z_index = -270
-z_as_relative = false
-texture = ExtResource( 9 )
-
-[node name="PrimerCapa" type="Sprite" parent="Background"]
-modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
-position = Vector2( 727, -7 )
-scale = Vector2( 2, 1.5 )
-z_index = -140
-z_as_relative = false
-texture = ExtResource( 10 )
-
-[node name="PrimerCapa2" type="Sprite" parent="Background"]
-modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
-position = Vector2( 4749, -23 )
-scale = Vector2( 2, 1.5 )
-z_index = -140
-z_as_relative = false
-texture = ExtResource( 10 )
-
-[node name="PrimerCapa3" type="Sprite" parent="Background"]
-modulate = Color( 0.823529, 0.713726, 0.956863, 1 )
-position = Vector2( -3363, -14 )
-scale = Vector2( 2, 1.5 )
-z_index = -140
-z_as_relative = false
-texture = ExtResource( 10 )
+[node name="Nivel1" type="Node"]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Enemigos" type="Node" parent="."]
 
@@ -156,9 +59,6 @@ position = Vector2( 1317, -329 )
 [node name="Trueno1" parent="Enemigos" instance=ExtResource( 8 )]
 position = Vector2( 2040, -521 )
 
-[node name="Trueno2" parent="Enemigos" instance=ExtResource( 8 )]
-position = Vector2( -523, -247 )
-
 [node name="Pinchos" type="Node" parent="."]
 
 [node name="Pinchos2" parent="Pinchos" instance=ExtResource( 5 )]
@@ -174,15 +74,11 @@ rotation = -3.14159
 scale = Vector2( 1, 0.6 )
 
 [node name="Pinchos1" parent="Pinchos" instance=ExtResource( 5 )]
-position = Vector2( -309, 537 )
+position = Vector2( -656, 532 )
 rotation = -3.55271e-14
 
 [node name="Pinchos4" parent="Pinchos" instance=ExtResource( 5 )]
 position = Vector2( -226, 534 )
-rotation = -3.55271e-14
-
-[node name="Pinchos5" parent="Pinchos" instance=ExtResource( 5 )]
-position = Vector2( -138, 534 )
 rotation = -3.55271e-14
 
 [node name="Pinchos6" parent="Pinchos" instance=ExtResource( 5 )]
@@ -196,8 +92,8 @@ rotation = -3.55271e-14
 [node name="Plataformas" type="Node" parent="."]
 
 [node name="PlataformaCesped" parent="Plataformas" instance=ExtResource( 2 )]
-position = Vector2( 145, 666 )
-scale = Vector2( 3, 3 )
+position = Vector2( 132, 578 )
+scale = Vector2( 9, 1 )
 
 [node name="PlataformaCesped2" parent="Plataformas" instance=ExtResource( 2 )]
 position = Vector2( 509, 314 )
@@ -275,13 +171,16 @@ scale = Vector2( 1.5, 0.3 )
 position = Vector2( -438, 63 )
 scale = Vector2( 1.5, 0.3 )
 
+[node name="PlataformaTrampa" parent="Plataformas" instance=ExtResource( 19 )]
+position = Vector2( -1963, 600 )
+
 [node name="Personajes" type="Node" parent="."]
 
 [node name="PersonajePrincipal" parent="Personajes" instance=ExtResource( 1 )]
-position = Vector2( 70, 226 )
+position = Vector2( 62, 294 )
 velocidad = Vector2( 400, 900 )
 aceleracion_caida = 280
-impulso_fuerza = 3200
+impulso_fuerza = 4000
 
 [node name="Rayos" type="Node" parent="."]
 
@@ -290,4 +189,93 @@ impulso_fuerza = 3200
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 11 )
 volume_db = -11.556
-autoplay = true
+
+[node name="Monedas" type="Node" parent="."]
+
+[node name="MonedasBronce" parent="Monedas" instance=ExtResource( 13 )]
+position = Vector2( 452, 226 )
+
+[node name="MonedasOro" parent="Monedas" instance=ExtResource( 14 )]
+position = Vector2( 511, 166 )
+
+[node name="MonedasPlata" parent="Monedas" instance=ExtResource( 15 )]
+position = Vector2( 566, 228 )
+
+[node name="PlataformaImpulso" type="Node" parent="."]
+
+[node name="PlataformaImpulso" parent="PlataformaImpulso" instance=ExtResource( 16 )]
+position = Vector2( -82, 527 )
+z_index = 35
+z_as_relative = false
+
+[node name="PowerUp" type="Node" parent="."]
+
+[node name="PowerUpSalto" parent="PowerUp" instance=ExtResource( 17 )]
+position = Vector2( -911, 414 )
+
+[node name="PowerUpVolar" parent="PowerUp" instance=ExtResource( 18 )]
+position = Vector2( -1143, 418 )
+
+[node name="Zanahorias" type="Node" parent="."]
+
+[node name="ZanahoriaLLave" parent="Zanahorias" instance=ExtResource( 22 )]
+position = Vector2( -420, 447 )
+
+[node name="ZanahoriaLLave2" parent="Zanahorias" instance=ExtResource( 22 )]
+position = Vector2( -310, 449 )
+
+[node name="Portal" parent="." instance=ExtResource( 21 )]
+position = Vector2( 233, 392 )
+proximo_nivel = "res://Juego/Niveles/NivelTemporal.tscn"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -1000 )
+
+[node name="Fondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Fondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nubes" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 1, 0.901961, 1, 1 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Nubes"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arboles1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Arboles1"]
+modulate = Color( 0.996078, 0.839216, 0.996078, 1 )
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arboles2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Arboles2"]
+modulate = Color( 1, 0.678431, 0.85098, 0.952941 )
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

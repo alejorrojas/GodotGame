@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Recursos/PNG/Players/bunny1_ready.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Personaje/PersonajePrincipal.gd" type="Script" id=2]
@@ -7,39 +7,293 @@
 [ext_resource path="res://Recursos/PNG/Players/bunny1_stand.png" type="Texture" id=5]
 [ext_resource path="res://Recursos/PNG/Players/bunny1_jump.png" type="Texture" id=6]
 [ext_resource path="res://Recursos/Sfx/Jump 10.wav" type="AudioStream" id=7]
-[ext_resource path="res://Recursos/PNG/Controles/ArribPress.png" type="Texture" id=9]
-[ext_resource path="res://Recursos/PNG/Controles/Derecha.png" type="Texture" id=10]
-[ext_resource path="res://Recursos/PNG/Controles/DerechaPress.png" type="Texture" id=11]
-[ext_resource path="res://Recursos/PNG/Controles/Izquierda.png" type="Texture" id=12]
-[ext_resource path="res://Recursos/PNG/Controles/IzquierdaPress.png" type="Texture" id=13]
-[ext_resource path="res://Recursos/PNG/Controles/Arriba.png" type="Texture" id=14]
+[ext_resource path="res://Recursos/PNG/Items/wing_left.png" type="Texture" id=8]
+[ext_resource path="res://Recursos/PNG/Items/wing_right.png" type="Texture" id=9]
+[ext_resource path="res://Recursos/Sfx/game-over-arcade.wav" type="AudioStream" id=10]
 [ext_resource path="res://Recursos/PNG/Players/bunny1_hurt.png" type="Texture" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44, 71 )
+
+[sub_resource type="Animation" id=3]
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("WingLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WingRight:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/ColorRect:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Volar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("WingLeft:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0, 0.0, -40.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WingRight:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, 0.0, 40.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WingLeft:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WingRight:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "aclarar"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("WingLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WingRight:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "entrar_portal"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animacion:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animacion:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "oscurecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Correr",
-"speed": 8.0
+"name": "Saltar",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "Morir",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "Saltar",
-"speed": 5.0
+"name": "Correr",
+"speed": 8.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44, 71 )
 
 [node name="PersonajePrincipal" type="KinematicBody2D" groups=["jugadores"]]
 scale = Vector2( 0.5, 0.5 )
@@ -48,16 +302,6 @@ z_as_relative = false
 collision_layer = 2
 collision_mask = 111
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, -100 )
-texture = ExtResource( 1 )
-
-[node name="Animacion" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -102 )
-frames = SubResource( 2 )
-animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -68,6 +312,10 @@ shape = SubResource( 1 )
 stream = ExtResource( 7 )
 volume_db = -26.413
 
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 6, -276 )
 current = true
@@ -76,26 +324,55 @@ drag_margin_v_enabled = true
 drag_margin_left = 0.1
 drag_margin_right = 0.1
 
-[node name="BotonesAndroid" type="CanvasLayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/RESET = SubResource( 3 )
+anims/Volar = SubResource( 4 )
+anims/aclarar = SubResource( 7 )
+anims/default = SubResource( 5 )
+anims/entrar_portal = SubResource( 6 )
+anims/oscurecer = SubResource( 8 )
 
-[node name="MovDerecha" type="TouchScreenButton" parent="BotonesAndroid"]
-position = Vector2( 177, 574 )
-normal = ExtResource( 10 )
-pressed = ExtResource( 11 )
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -100 )
+texture = ExtResource( 1 )
 
-[node name="MovIzquierda" type="TouchScreenButton" parent="BotonesAndroid"]
-position = Vector2( 75, 574 )
-normal = ExtResource( 12 )
-pressed = ExtResource( 13 )
+[node name="WingLeft" type="Sprite" parent="."]
+visible = false
+position = Vector2( -36, -106 )
+texture = ExtResource( 8 )
+offset = Vector2( -38, -12 )
 
-[node name="MovArriba" type="TouchScreenButton" parent="BotonesAndroid"]
-position = Vector2( 1129, 574 )
-normal = ExtResource( 14 )
-pressed = ExtResource( 9 )
+[node name="WingRight" type="Sprite" parent="."]
+visible = false
+position = Vector2( 38, -106 )
+texture = ExtResource( 9 )
+offset = Vector2( 36, -12 )
 
-[connection signal="pressed" from="BotonesAndroid/MovDerecha" to="." method="_on_MovDerecha_pressed"]
-[connection signal="released" from="BotonesAndroid/MovDerecha" to="." method="_on_MovDerecha_released"]
-[connection signal="pressed" from="BotonesAndroid/MovIzquierda" to="." method="_on_MovIzquierda_pressed"]
-[connection signal="released" from="BotonesAndroid/MovIzquierda" to="." method="_on_MovIzquierda_released"]
-[connection signal="pressed" from="BotonesAndroid/MovArriba" to="." method="_on_MovArriba_pressed"]
-[connection signal="released" from="BotonesAndroid/MovArriba" to="." method="_on_MovArriba_released"]
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -102 )
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="TimerPowerupVolar" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="TimerPowerupSalto" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="TimerPowerupVolar" to="." method="_on_TimerPowerupVolar_timeout"]
+[connection signal="timeout" from="TimerPowerupSalto" to="." method="_on_TimerPowerup_timeout"]

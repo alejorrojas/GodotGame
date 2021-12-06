@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var velocidad = 200.0
 
-var gravedad = 100.0
+var gravedad = 800.0
 var movimiento = Vector2.ZERO
 
 onready var animacion = $CorrerAnimacion
