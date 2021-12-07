@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Juego/Personaje/PersonajePrincipal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Plataforma1/PlataformaCesped.tscn" type="PackedScene" id=2]
@@ -22,12 +22,79 @@
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=20]
 [ext_resource path="res://Juego/Elementos/Portal.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Juego/Elementos/ZanahoriaLLave.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Juego/Menus/Pausa.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Juego/Elementos/PinchosTrampa.tscn" type="PackedScene" id=24]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -1000 )
+
+[node name="Fondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Fondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nubes" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 1, 0.901961, 1, 1 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Nubes"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arboles1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Arboles1"]
+modulate = Color( 0.996078, 0.839216, 0.996078, 1 )
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arboles2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Arboles2"]
+modulate = Color( 1, 0.678431, 0.85098, 0.952941 )
+margin_right = 2048.0
+margin_bottom = 2048.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPausa" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="MenuPausa" instance=ExtResource( 23 )]
+
+[node name="Personajes" type="Node" parent="."]
+
+[node name="PersonajePrincipal" parent="Personajes" instance=ExtResource( 1 )]
+position = Vector2( 134, 368 )
+velocidad = Vector2( 400, 900 )
+aceleracion_caida = 280
+fuerza_salto = 3000
+impulso_fuerza = 3200
 
 [node name="Enemigos" type="Node" parent="."]
 
@@ -174,14 +241,6 @@ scale = Vector2( 1.5, 0.3 )
 [node name="PlataformaTrampa" parent="Plataformas" instance=ExtResource( 19 )]
 position = Vector2( -1963, 600 )
 
-[node name="Personajes" type="Node" parent="."]
-
-[node name="PersonajePrincipal" parent="Personajes" instance=ExtResource( 1 )]
-position = Vector2( 62, 294 )
-velocidad = Vector2( 400, 900 )
-aceleracion_caida = 280
-impulso_fuerza = 4000
-
 [node name="Rayos" type="Node" parent="."]
 
 [node name="Sfx" type="Node" parent="."]
@@ -224,58 +283,10 @@ position = Vector2( -420, 447 )
 [node name="ZanahoriaLLave2" parent="Zanahorias" instance=ExtResource( 22 )]
 position = Vector2( -310, 449 )
 
+[node name="Pinchos trampa" type="Node" parent="."]
+
+[node name="PinchosTrampa" parent="Pinchos trampa" instance=ExtResource( 24 )]
+
 [node name="Portal" parent="." instance=ExtResource( 21 )]
 position = Vector2( 233, 392 )
 proximo_nivel = "res://Juego/Niveles/NivelTemporal.tscn"
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( 0, -1000 )
-
-[node name="Fondo" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2048, 2048 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Fondo"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Nubes" type="ParallaxLayer" parent="ParallaxBackground"]
-modulate = Color( 1, 0.901961, 1, 1 )
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Nubes"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Arboles1" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Arboles1"]
-modulate = Color( 0.996078, 0.839216, 0.996078, 1 )
-margin_right = 2048.0
-margin_bottom = 2048.0
-texture = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Arboles2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2048, 0 )
-
-[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Arboles2"]
-modulate = Color( 1, 0.678431, 0.85098, 0.952941 )
-margin_right = 2048.0
-margin_bottom = 2048.0
-texture = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -22,7 +22,6 @@ var aceleracion_caida_original
 var movimiento_habitado = true
 
 func _ready():
-	animacion.play("Idle")
 	animacion_personaje.play("aclarar")
 	fuerza_salto_original = fuerza_salto
 	aceleracion_caida_original = aceleracion_caida
