@@ -2,10 +2,11 @@ extends Area2D
 
 export var velocidad = 350.0
 
+var mi_pos = Vector2.ZERO
+
 onready var animacion = $AnimatedSprite
 onready var detectar_jugador = $Colisionador
 
-var mi_pos = Vector2.ZERO
 
 func crear_pos(pos):
 	mi_pos = pos

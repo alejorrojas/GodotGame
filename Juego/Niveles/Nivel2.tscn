@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Elementos/ZanahoriaLLave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Elementos/Pinchos.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Elementos/MonedasBronce.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/Elementos/MonedasOro.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Elementos/MonedasPlata.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Plataforma1/PlataformaCesped.tscn" type="PackedScene" id=7]
+
+[node name="Nivel2" instance=ExtResource( 1 )]
+nivel_actual = "res://Juego/Niveles/Nivel2.tscn"
+
+[node name="PersonajePrincipal" parent="Personajes" index="0"]
+position = Vector2( 334, 428 )
+
+[node name="Pinchos" parent="Daño" index="0" instance=ExtResource( 3 )]
+position = Vector2( 729, 407 )
+
+[node name="PlataformaRosa" parent="Plataformas" index="0"]
+position = Vector2( 315, 485 )
+scale = Vector2( 0.6, 0.3 )
+
+[node name="PlataformaCesped" parent="Plataformas" index="1" instance=ExtResource( 7 )]
+position = Vector2( 665, 417 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaCesped2" parent="Plataformas" index="2" instance=ExtResource( 7 )]
+position = Vector2( 940, 528 )
+
+[node name="MonedasOro" parent="Monedas" index="0" instance=ExtResource( 5 )]
+position = Vector2( 583, 337 )
+
+[node name="MonedasOro2" parent="Monedas" index="1" instance=ExtResource( 5 )]
+position = Vector2( 583, 337 )
+
+[node name="MonedasPlata" parent="Monedas" index="2" instance=ExtResource( 6 )]
+position = Vector2( 490, 344 )
+
+[node name="MonedasBronce" parent="Monedas" index="3" instance=ExtResource( 4 )]
+position = Vector2( 428, 403 )
+
+[node name="ZanahoriaLLave" parent="Zanahorias" index="0" instance=ExtResource( 2 )]
+position = Vector2( 871, 321 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 941, 511 )
+proximo_nivel = "res://Juego/Niveles/Nivel3.tscn"

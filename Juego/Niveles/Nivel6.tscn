@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+
+[node name="Nivel6" instance=ExtResource( 1 )]
+nivel_actual = "res://Juego/Niveles/Nivel6.tscn"
+
+[node name="Portal" parent="." index="10"]
+proximo_nivel = "res://Juego/Menus/MenuVictoria.tscn"

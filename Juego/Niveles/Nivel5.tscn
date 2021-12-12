@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Plataforma1/PlataformaCesped.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Plataforma1/PlataformaNieve.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Plataforma1/PlataformaRosa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/Elementos/ZanahoriaLLave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Enemigos/Enemigo1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Enemigos/Enemigo2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Juego/Elementos/PinchosTrampa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Juego/Elementos/Pinchos.tscn" type="PackedScene" id=9]
+
+[node name="Nivel5" instance=ExtResource( 1 )]
+nivel_actual = "res://Juego/Niveles/Nivel5.tscn"
+
+[node name="HUD" parent="CapaFrente" index="0"]
+margin_top = -4.0
+margin_bottom = -4.0
+
+[node name="PersonajePrincipal" parent="Personajes" index="0"]
+position = Vector2( 181, 401 )
+
+[node name="Pinchos" parent="Daño" index="0" instance=ExtResource( 9 )]
+position = Vector2( -873, 358 )
+
+[node name="PinchosTrampa" parent="Daño" index="1" instance=ExtResource( 8 )]
+position = Vector2( -1404, -204 )
+
+[node name="Pinchon" parent="Enemigos" index="0" instance=ExtResource( 6 )]
+position = Vector2( -591, 396 )
+velocidad = 250.0
+
+[node name="Volon" parent="Enemigos" index="1" instance=ExtResource( 7 )]
+position = Vector2( 739, 336 )
+
+[node name="PlataformaRosa" parent="Plataformas" index="0"]
+scale = Vector2( 1.5, 0.3 )
+
+[node name="PlataformaNieve" parent="Plataformas" index="1" instance=ExtResource( 3 )]
+position = Vector2( -176, 529 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaNieve2" parent="Plataformas" index="2" instance=ExtResource( 3 )]
+modulate = Color( 0.894118, 0.886275, 0.647059, 1 )
+position = Vector2( -939, 367 )
+scale = Vector2( 0.5, 0.3 )
+
+[node name="PlataformaNieve3" parent="Plataformas" index="3" instance=ExtResource( 3 )]
+modulate = Color( 0.65098, 0.4, 0.658824, 1 )
+position = Vector2( -1399, 216 )
+scale = Vector2( 0.4, 0.3 )
+
+[node name="PlataformaNieve4" parent="Plataformas" index="4" instance=ExtResource( 3 )]
+modulate = Color( 0.537255, 0.894118, 0.929412, 1 )
+position = Vector2( -1404, -212 )
+scale = Vector2( 0.4, 0.3 )
+
+[node name="PlataformaCesped" parent="Plataformas" index="5" instance=ExtResource( 2 )]
+position = Vector2( -579, 452 )
+scale = Vector2( 1, 0.3 )
+
+[node name="PlataformaCesped2" parent="Plataformas" index="6" instance=ExtResource( 2 )]
+position = Vector2( 1075, 291 )
+scale = Vector2( 1, 0.3 )
+
+[node name="PlataformaRosa2" parent="Plataformas" index="7" instance=ExtResource( 4 )]
+position = Vector2( -1145, 272 )
+scale = Vector2( 0.4, 0.3 )
+
+[node name="ZanahoriaLLave" parent="Zanahorias" index="0"]
+position = Vector2( 739, 36 )
+
+[node name="ZanahoriaLLave2" parent="Zanahorias" index="1" instance=ExtResource( 5 )]
+position = Vector2( -1410, 180 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 1367, -24 )
+proximo_nivel = "res://Juego/Niveles/Nivel6.tscn"

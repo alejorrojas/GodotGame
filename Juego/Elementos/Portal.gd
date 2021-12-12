@@ -5,6 +5,7 @@ export var proximo_nivel =""
 var encendido = false
 
 func _ready():
+# warning-ignore:return_value_discarded
 	get_parent().connect("activar_portal", self, "animacion_play")
 
 
@@ -15,6 +16,7 @@ func _on_Portal_body_entered(body):
 		cambiar_nivel()
 		
 func cambiar_nivel():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(proximo_nivel)
 
 func animacion_play():

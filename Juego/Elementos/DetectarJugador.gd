@@ -5,5 +5,5 @@ onready var animacion = $AnimationPlayer
 
 func _process(_delta):
 	if detectar_jugador.is_colliding():
-		animacion.play("caer_trampa")
+		animacion.play("Caer")
 		

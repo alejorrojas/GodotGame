@@ -1,12 +1,18 @@
 extends KinematicBody2D
 
 
-export var velocidad = Vector2(150.0, 150)
-export var aceleracion_caida = 400
-export var fuerza_salto = 2800
+export var velocidad = Vector2(400, 900)
+export var aceleracion_caida = 280
+export var fuerza_salto = 3000
 export var fuerza_rebote = 350
-export var impulso_fuerza = 3000
+export var impulso_fuerza = 3600
 export var powerup_vuelo = 60
+
+var movimiento = Vector2.ZERO
+var fuerza_salto_original 
+var aceleracion_caida_original
+var movimiento_habitado = true
+var esta_vivo = true
 
 onready var animacion = $Animacion
 onready var sonido_salto = $AudioSalto
@@ -16,22 +22,18 @@ onready var animacion_personaje = $AnimationPlayer
 onready var timer_volar = $TimerPowerupVolar
 
 
-var movimiento = Vector2.ZERO
-var fuerza_salto_original 
-var aceleracion_caida_original
-var movimiento_habitado = true
-
 func _ready():
 	animacion_personaje.play("aclarar")
 	fuerza_salto_original = fuerza_salto
 	aceleracion_caida_original = aceleracion_caida
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movimiento.x = velocidad.x * tomar_direccion() 
 	caida_al_vacio()
 	caer()
 	saltar()
 	rebote_techo()
+# warning-ignore:return_value_discarded
 	move_and_slide(movimiento, Vector2.UP)
 
 #Movimiento PC
@@ -77,15 +79,20 @@ func impulso():
 	
 #metodos de respawn
 func respawn():
-	animacion_morir()
-	yield(get_tree().create_timer(1), "timeout")
-	get_tree().reload_current_scene()
+	if esta_vivo == true:	
+		esta_vivo = false
+		DatosPlayer.restar_vidas()
+		DatosPlayer.monedas_reset()
+		animacion_morir()
+		if DatosPlayer.vidas >=1:
+			yield(get_tree().create_timer(1), "timeout")
+	# warning-ignore:return_value_discarded
+			get_tree().reload_current_scene()
 	
 func animacion_morir():
 	movimiento_habitado = false
-	animacion.play("Morir")
-	animacion_personaje.play("oscurecer")
-	$GameOver.play()
+	animacion_personaje.play("morir")
+	
 
 #metodos de portal
 func play_entrar_portal(posicion_portal):
@@ -110,7 +117,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 #PowerUp salto
 func cambiar_fuerzasalto():
 	timer.start()
-	fuerza_salto = impulso_fuerza * 0.9
+	fuerza_salto = impulso_fuerza 
 
 func _on_TimerPowerup_timeout():
 	fuerza_salto = fuerza_salto_original

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 
 
-func _on_DetectarJugador_body_entered(body):
+func _on_DetectarJugador_body_entered(_body):
 	$DetectarJugador.set_deferred("disable", true)
 	$AnimationPlayer.play("Caer")
 	

@@ -11,8 +11,17 @@ config_version=4
 [application]
 
 config/name="Infogamers"
-run/main_scene="res://Juego/Niveles/Nivel1.tscn"
+run/main_scene="res://Juego/Menus/principal.tscn"
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://Recursos/Sfx/default_bus_layout.tres"
+
+[autoload]
+
+DatosPlayer="*res://Juego/AutoLoads/DatosPlayer.gd"
+MusicaGlobal="*res://Juego/AutoLoads/MusicaGlobal.tscn"
 
 [display]
 

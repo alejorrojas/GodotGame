@@ -23,14 +23,14 @@ animations = [ {
 "name": "girar_oro",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "girar_bronce",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "girar_plata",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "girar_bronce",
 "speed": 8.0
 } ]
 
@@ -144,7 +144,7 @@ scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 2 )
 
 [node name="Consumir" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 15 )
+stream = ExtResource( 14 )
 volume_db = -14.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Juego/Personaje/PersonajePrincipal.gd" type="Script" id=2]
 [ext_resource path="res://Recursos/PNG/Players/bunny1_walk1.png" type="Texture" id=3]
@@ -15,7 +15,7 @@
 extents = Vector2( 52, 93 )
 
 [sub_resource type="Animation" id=3]
-length = 0.8
+length = 0.001
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -61,6 +61,30 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Morir:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -174,6 +198,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Morir:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "entrar_portal"
@@ -212,6 +248,71 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "morir"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animacion:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Morir:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("GameOver")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.320364,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=8]
@@ -254,20 +355,15 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Saltar",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "Morir",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Correr",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Saltar",
+"speed": 5.0
 } ]
 
 [node name="PersonajePrincipal" type="KinematicBody2D" groups=["jugadores"]]
@@ -304,31 +400,39 @@ drag_margin_left = 0.1
 drag_margin_right = 0.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "default"
+autoplay = "aclarar"
 anims/RESET = SubResource( 3 )
 anims/Volar = SubResource( 4 )
 anims/aclarar = SubResource( 7 )
 anims/default = SubResource( 5 )
 anims/entrar_portal = SubResource( 6 )
+anims/morir = SubResource( 9 )
 anims/oscurecer = SubResource( 8 )
 
 [node name="WingLeft" type="Sprite" parent="."]
 visible = false
-position = Vector2( -36, -106 )
+position = Vector2( -36, -64 )
 texture = ExtResource( 8 )
 offset = Vector2( -38, -12 )
 
 [node name="WingRight" type="Sprite" parent="."]
 visible = false
-position = Vector2( 38, -106 )
+position = Vector2( 40, -64 )
 texture = ExtResource( 9 )
 offset = Vector2( 36, -12 )
+
+[node name="Morir" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -50 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Animacion" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -52 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 1
 
 [node name="TimerPowerupVolar" type="Timer" parent="."]
 wait_time = 3.0
@@ -342,6 +446,7 @@ wait_time = 4.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
+modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

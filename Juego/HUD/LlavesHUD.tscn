@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/HUD/ContenedorGeneral.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Recursos/PNG/HUD/carrots.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 108, -4 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animacion_llaves"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 73, -11 ), Vector2( 73, 5 ), Vector2( 73, -20 ), Vector2( 73, -11 ) ]
+}
+
+[node name="Llaves" instance=ExtResource( 1 )]
+
+[node name="TextureRect" parent="." index="0"]
+margin_left = 108.0
+margin_top = -4.0
+margin_right = 163.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+autoplay = "animacion_llaves"
+anims/RESET = SubResource( 1 )
+anims/animacion_llaves = SubResource( 2 )

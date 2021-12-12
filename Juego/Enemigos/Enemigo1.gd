@@ -12,6 +12,7 @@ onready var detectar_pared = $DetectarPared
 func _physics_process(_delta):
 	correr()
 	caer()
+# warning-ignore:return_value_discarded
 	move_and_slide(movimiento, Vector2.UP)
 	
 func caer():

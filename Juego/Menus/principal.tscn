@@ -140,7 +140,6 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-proximo_nivel = "res://Juego/Niveles/Nivel1.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

@@ -1,4 +1,7 @@
 extends "res://Juego/Elementos/MonedaBase.gd"
 
-func _on_MonedasBase_body_entered(body):
+var tipo_moneda = "oro"
+
+func _on_MonedasBase_body_entered(_body):
 	animacion_consumir.play("ConsumirOro")
+	DatosPlayer.sumar_monedas(tipo_moneda)

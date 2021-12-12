@@ -8,6 +8,6 @@ func _ready():
 	animacion.play()
 
 
-func _on_MonedasBase_body_entered(body):
+func _on_MonedasBase_body_entered(_body):
 	colision_personaje.set_deferred("disable", true)
-	
+	animacion_consumir.play("Consumir")

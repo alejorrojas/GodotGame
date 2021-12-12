@@ -5,3 +5,7 @@
 
 [node name="MonedasBronce" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+tipo_moneda = "bronce"
+
+[node name="ColisionPersonaje" parent="." index="1"]
+visible = false

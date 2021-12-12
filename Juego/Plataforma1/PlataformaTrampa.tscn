@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Juego/Plataforma1/PlataformaBase.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Recursos/PNG/Environment/ground_snow_small_broken.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/PNG/Environment/ground_grass_small_broken.png" type="Texture" id=2]
 [ext_resource path="res://Juego/Plataforma1/PlataformaTrampa.gd" type="Script" id=4]
 [ext_resource path="res://Recursos/Sfx/timer-1.wav" type="AudioStream" id=5]
 
@@ -30,7 +30,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.65, 1 ),
+"times": PoolRealArray( 0.65, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -61,10 +61,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 300 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("DetectarJugador/ColisionTrampa:position")
@@ -73,10 +73,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, -101.667 ), Vector2( -1, 300 ) ]
+"values": [ Vector2( -1, -101.667 ), Vector2( -1, -101.667 ), Vector2( -1, 300 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -156,6 +156,6 @@ anims/RESET = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource( 5 )
-volume_db = -30.0
+volume_db = -10.0
 
 [connection signal="body_entered" from="DetectarJugador" to="." method="_on_DetectarJugador_body_entered"]

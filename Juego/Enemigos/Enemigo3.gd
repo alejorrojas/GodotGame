@@ -1,11 +1,12 @@
 extends Node2D
 
+export var rayo: PackedScene
+
 onready var detectar_jugador = $Sprite/RayCast2D
 onready var posiciones_disparo = $Sprite/PosicionesDisparo
 onready var timer = $Timer
 onready var sonido_disparo = $Rayos
 
-export var rayo: PackedScene
 
 var puede_disparar = true
 
