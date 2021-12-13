@@ -40,4 +40,5 @@ func animar(valor_actual):
 
 
 func _on_DetectarJugador_body_entered(body):
-	body.respawn()
+	if body.is_in_group("jugadores"):
+			body.respawn()

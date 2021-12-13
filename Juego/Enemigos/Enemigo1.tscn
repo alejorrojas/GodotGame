@@ -38,14 +38,12 @@ position = Vector2( -1, 76 )
 shape = SubResource( 2 )
 
 [node name="DetectarVacio" type="RayCast2D" parent="."]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 50, 75 )
 enabled = true
 collision_mask = 32
 
 [node name="DetectarPared" type="RayCast2D" parent="."]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 42, 24 )
 enabled = true

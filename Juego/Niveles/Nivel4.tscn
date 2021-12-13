@@ -114,6 +114,6 @@ position = Vector2( 598, 172 )
 [node name="ZanahoriaLLave2" parent="Zanahorias" index="1" instance=ExtResource( 2 )]
 position = Vector2( 2483, -84 )
 
-[node name="Portal" parent="." index="10"]
+[node name="Portal" parent="." index="11"]
 position = Vector2( 2759, -176 )
 proximo_nivel = "res://Juego/Niveles/Nivel5.tscn"

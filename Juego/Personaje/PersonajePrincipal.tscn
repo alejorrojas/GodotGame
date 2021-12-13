@@ -373,6 +373,7 @@ z_as_relative = false
 collision_layer = 2
 collision_mask = 111
 script = ExtResource( 2 )
+powerup_vuelo = 90
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

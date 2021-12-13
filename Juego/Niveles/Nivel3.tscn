@@ -75,7 +75,7 @@ position = Vector2( 226, 669 )
 [node name="MonedasOro" parent="Monedas" index="5" instance=ExtResource( 5 )]
 position = Vector2( 1917, 106 )
 
-[node name="ZanahoriaLLave" parent="Zanahorias" index="0" instance=ExtResource( 2 )]
+[node name="ZanahoriaLLave" parent="Zanahorias" index="0"]
 position = Vector2( 714, 598 )
 
 [node name="ZanahoriaLLave2" parent="Zanahorias" index="1" instance=ExtResource( 2 )]
@@ -84,6 +84,6 @@ position = Vector2( 1525, 250 )
 [node name="ZanahoriaLLave3" parent="Zanahorias" index="2" instance=ExtResource( 2 )]
 position = Vector2( 1776, 373 )
 
-[node name="Portal" parent="." index="10"]
+[node name="Portal" parent="." index="11"]
 position = Vector2( 2086, 455 )
 proximo_nivel = "res://Juego/Niveles/Nivel4.tscn"
