@@ -29,7 +29,7 @@ margin_right = 7.0
 margin_bottom = 1.0
 
 [node name="PersonajePrincipal" parent="Personajes" index="0"]
-position = Vector2( 266, 565 )
+position = Vector2( 231, 521 )
 
 [node name="Pinchos" parent="Daño" index="0" instance=ExtResource( 10 )]
 position = Vector2( 651, 184 )
@@ -42,50 +42,47 @@ rotation = 3.14159
 position = Vector2( 475, -193 )
 
 [node name="Pinchos5" parent="Daño" index="3" instance=ExtResource( 10 )]
-position = Vector2( 1478, -906 )
+position = Vector2( 1361, -825 )
 
 [node name="Pinchos6" parent="Daño" index="4" instance=ExtResource( 10 )]
-position = Vector2( 3092, -1248 )
+position = Vector2( 2981, -1047 )
 
 [node name="Pinchos7" parent="Daño" index="5" instance=ExtResource( 10 )]
-position = Vector2( 2901, -2222 )
+position = Vector2( 2785, -2016 )
 
 [node name="Pinchos8" parent="Daño" index="6" instance=ExtResource( 10 )]
-position = Vector2( 2613, -2219 )
+position = Vector2( 2502, -2018 )
 
 [node name="Pinchos9" parent="Daño" index="7" instance=ExtResource( 10 )]
-position = Vector2( 2389, -2214 )
+position = Vector2( 2278, -2013 )
 
 [node name="Pinchos4" parent="Daño" index="8" instance=ExtResource( 10 )]
 position = Vector2( 191, -195 )
 
 [node name="PinchosTrampa" parent="Daño" index="9" instance=ExtResource( 9 )]
 position = Vector2( 505, 200 )
+cast_long = 600
 
 [node name="PinchosTrampa2" parent="Daño" index="10" instance=ExtResource( 9 )]
-position = Vector2( 427, -1117 )
-cast_long = 20
+position = Vector2( 484, -1228 )
+cast_long = 1000
 
-[node name="PinchosTrampa6" parent="Daño" index="11" instance=ExtResource( 9 )]
-position = Vector2( 3528, -1860 )
+[node name="PinchosTrampa8" parent="Daño" index="11" instance=ExtResource( 9 )]
+position = Vector2( 2981, -1654 )
+cast_long = 1000
 
-[node name="PinchosTrampa7" parent="Daño" index="12" instance=ExtResource( 9 )]
-position = Vector2( 3079, -1865 )
+[node name="PinchosTrampa4" parent="Daño" index="12" instance=ExtResource( 9 )]
+position = Vector2( 268, -1228 )
+cast_long = 1000
 
-[node name="PinchosTrampa8" parent="Daño" index="13" instance=ExtResource( 9 )]
-position = Vector2( 3079, -1865 )
-
-[node name="PinchosTrampa4" parent="Daño" index="14" instance=ExtResource( 9 )]
-position = Vector2( 211, -1124 )
-cast_long = 20
-
-[node name="PinchosTrampa5" parent="Daño" index="15" instance=ExtResource( 9 )]
-position = Vector2( 2, -579 )
+[node name="PinchosTrampa5" parent="Daño" index="13" instance=ExtResource( 9 )]
+position = Vector2( 68, -615 )
 rotation = 0.0
+cast_long = 750
 
-[node name="PinchosTrampa3" parent="Daño" index="16" instance=ExtResource( 9 )]
-position = Vector2( 327, -547 )
-cast_long = 20
+[node name="PinchosTrampa3" parent="Daño" index="14" instance=ExtResource( 9 )]
+position = Vector2( 335, -581 )
+cast_long = 600
 
 [node name="Pinchon" parent="Enemigos" index="0" instance=ExtResource( 8 )]
 position = Vector2( 784, 556 )
@@ -96,27 +93,27 @@ position = Vector2( 660, -234 )
 velocidad = 300.0
 
 [node name="Pinchon3" parent="Enemigos" index="2" instance=ExtResource( 8 )]
-position = Vector2( 2487, -2272 )
+position = Vector2( 2376, -2071 )
 velocidad = 300.0
 
 [node name="Volon" parent="Enemigos" index="3" instance=ExtResource( 11 )]
 position = Vector2( 379, 15 )
 
 [node name="Volon2" parent="Enemigos" index="4" instance=ExtResource( 11 )]
-position = Vector2( 2302, -1111 )
+position = Vector2( 2185, -987 )
 
 [node name="Volon4" parent="Enemigos" index="5" instance=ExtResource( 11 )]
-position = Vector2( 2917, -1526 )
+position = Vector2( 2806, -1300 )
 
 [node name="Volon3" parent="Enemigos" index="6" instance=ExtResource( 11 )]
-position = Vector2( 3278, -1539 )
+position = Vector2( 3167, -1306 )
 
 [node name="Trueno" parent="Enemigos" index="7" instance=ExtResource( 12 )]
-position = Vector2( 1399, -1883 )
-cast_long = 2000
+position = Vector2( 1444, -1802 )
+cast_long = 3000
 
 [node name="Trueno2" parent="Enemigos" index="8" instance=ExtResource( 12 )]
-position = Vector2( 3669, -2481 )
+position = Vector2( 3558, -2280 )
 
 [node name="PlataformaRosa" parent="Plataformas" index="0"]
 position = Vector2( 465, 619 )
@@ -139,55 +136,55 @@ position = Vector2( 1123, 283 )
 scale = Vector2( 1, 0.4 )
 
 [node name="PlataformaInvisible" parent="Plataformas" index="5" instance=ExtResource( 2 )]
-position = Vector2( -622, -170 )
+position = Vector2( -622, 37 )
 scale = Vector2( 1, 0.5 )
 
 [node name="PlataformaRosa2" parent="Plataformas" index="6" instance=ExtResource( 7 )]
-position = Vector2( 154, -555 )
+position = Vector2( 220, -591 )
 scale = Vector2( 3, 0.5 )
 
 [node name="PlataformaNieve3" parent="Plataformas" index="7" instance=ExtResource( 4 )]
 modulate = Color( 0.592157, 0.796078, 0.258824, 1 )
-position = Vector2( 3230, -1874 )
+position = Vector2( 3119, -1673 )
 rotation = -0.000815307
 scale = Vector2( 3, 0.5 )
 
 [node name="PlataformaCesped2" parent="Plataformas" index="8" instance=ExtResource( 3 )]
-position = Vector2( 3003, -1234 )
+position = Vector2( 2892, -1033 )
 rotation = -0.000815307
 scale = Vector2( 3, 0.4 )
 
 [node name="PlataformaCesped4" parent="Plataformas" index="9" instance=ExtResource( 3 )]
-position = Vector2( 173, -1137 )
+position = Vector2( 230, -1241 )
 rotation = -0.000815307
 scale = Vector2( 3, 0.4 )
 
 [node name="PlataformaRosa3" parent="Plataformas" index="10" instance=ExtResource( 7 )]
-position = Vector2( 2596, -2197 )
+position = Vector2( 2485, -1996 )
 rotation = -0.000815307
 scale = Vector2( 3, 0.5 )
 
 [node name="PlataformaRosa4" parent="Plataformas" index="11" instance=ExtResource( 7 )]
-position = Vector2( 1820, -884 )
+position = Vector2( 1703, -803 )
 rotation = -0.000815307
 scale = Vector2( 2, 0.5 )
 
 [node name="PlataformaNieve" parent="Plataformas" index="12" instance=ExtResource( 4 )]
 modulate = Color( 0.901961, 0.45098, 0.937255, 1 )
-position = Vector2( 2438, -1734 )
+position = Vector2( 2327, -1533 )
 scale = Vector2( 0.4, 0.3 )
 
 [node name="PlataformaNieve6" parent="Plataformas" index="13" instance=ExtResource( 4 )]
-position = Vector2( 2698, -1564 )
+position = Vector2( 2587, -1363 )
 scale = Vector2( 0.4, 0.3 )
 
 [node name="PlataformaNieve5" parent="Plataformas" index="14" instance=ExtResource( 4 )]
 modulate = Color( 1, 0.894118, 0.329412, 1 )
-position = Vector2( 1817, -2534 )
+position = Vector2( 1713, -2256 )
 scale = Vector2( 0.4, 0.3 )
 
 [node name="PlataformaTrampa" parent="Plataformas" index="15" instance=ExtResource( 15 )]
-position = Vector2( 1178, -751 )
+position = Vector2( 1133, -721 )
 scale = Vector2( 1.5, 0.3 )
 
 [node name="PlataformaImpulso" parent="Elementos" index="0" instance=ExtResource( 6 )]
@@ -197,24 +194,27 @@ position = Vector2( 865, 600 )
 position = Vector2( -273, 180 )
 
 [node name="PlataformaImpulso3" parent="Elementos" index="2" instance=ExtResource( 6 )]
-position = Vector2( -308, -579 )
+position = Vector2( -242, -615 )
 
-[node name="PlataformaImpulso4" parent="Elementos" index="3" instance=ExtResource( 6 )]
-position = Vector2( 2574, -1257 )
+[node name="PlataformaImpulso6" parent="Elementos" index="3" instance=ExtResource( 6 )]
+position = Vector2( 733, -616 )
+
+[node name="PlataformaImpulso4" parent="Elementos" index="4" instance=ExtResource( 6 )]
+position = Vector2( 2463, -1056 )
 rotation = -0.000815307
 
-[node name="PlataformaImpulso5" parent="Elementos" index="4" instance=ExtResource( 6 )]
-position = Vector2( 3325, -1900 )
+[node name="PlataformaImpulso5" parent="Elementos" index="5" instance=ExtResource( 6 )]
+position = Vector2( 3214, -1699 )
 rotation = -0.000815307
 
 [node name="MonedasPlata" parent="Monedas" index="0" instance=ExtResource( 18 )]
-position = Vector2( -718, -281 )
+position = Vector2( -718, -74 )
 
 [node name="MonedasPlata2" parent="Monedas" index="1" instance=ExtResource( 18 )]
-position = Vector2( -553, -283 )
+position = Vector2( -553, -76 )
 
 [node name="MonedasPlata3" parent="Monedas" index="2" instance=ExtResource( 18 )]
-position = Vector2( -636, -362 )
+position = Vector2( -636, -155 )
 
 [node name="MonedasBronce" parent="Monedas" index="3" instance=ExtResource( 17 )]
 position = Vector2( 1050, 157 )
@@ -223,56 +223,56 @@ position = Vector2( 1050, 157 )
 position = Vector2( 1203, 157 )
 
 [node name="MonedasBronce3" parent="Monedas" index="5" instance=ExtResource( 17 )]
-position = Vector2( 1745, -1034 )
+position = Vector2( 1628, -953 )
 
 [node name="MonedasBronce4" parent="Monedas" index="6" instance=ExtResource( 17 )]
-position = Vector2( 1906, -1034 )
+position = Vector2( 1789, -953 )
 
 [node name="MonedasBronce5" parent="Monedas" index="7" instance=ExtResource( 17 )]
-position = Vector2( 1824, -1034 )
+position = Vector2( 1707, -953 )
 
 [node name="MonedasBronce6" parent="Monedas" index="8" instance=ExtResource( 17 )]
-position = Vector2( 1984, -1034 )
+position = Vector2( 1867, -953 )
 
 [node name="MonedasOro" parent="Monedas" index="9" instance=ExtResource( 13 )]
-position = Vector2( -306, -1006 )
+position = Vector2( -242, -976 )
 
 [node name="MonedasOro7" parent="Monedas" index="10" instance=ExtResource( 13 )]
-position = Vector2( 3079, -1599 )
+position = Vector2( 2968, -1398 )
 
 [node name="MonedasOro8" parent="Monedas" index="11" instance=ExtResource( 13 )]
-position = Vector2( 3079, -1412 )
+position = Vector2( 2968, -1211 )
 
 [node name="MonedasOro4" parent="Monedas" index="12" instance=ExtResource( 13 )]
-position = Vector2( 1947, -2694 )
+position = Vector2( 1843, -2416 )
 
 [node name="MonedasOro5" parent="Monedas" index="13" instance=ExtResource( 13 )]
-position = Vector2( 2087, -2624 )
+position = Vector2( 1983, -2346 )
 
 [node name="MonedasOro6" parent="Monedas" index="14" instance=ExtResource( 13 )]
-position = Vector2( 2166, -2471 )
+position = Vector2( 2062, -2193 )
 
 [node name="MonedasOro2" parent="Monedas" index="15" instance=ExtResource( 13 )]
-position = Vector2( -308, -884 )
+position = Vector2( -242, -882 )
 
 [node name="MonedasOro3" parent="Monedas" index="16" instance=ExtResource( 13 )]
-position = Vector2( -305, -758 )
+position = Vector2( -243, -776 )
 
 [node name="PowerUpVolar" parent="PowerUps" index="0" instance=ExtResource( 5 )]
 position = Vector2( 943, -269 )
 
 [node name="PowerUpSalto" parent="PowerUps" index="1" instance=ExtResource( 16 )]
-position = Vector2( 2185, -2332 )
+position = Vector2( 2086, -2095 )
 
 [node name="ZanahoriaLLave" parent="Zanahorias" index="0"]
 position = Vector2( 68, 86 )
 
 [node name="ZanahoriaLLave2" parent="Zanahorias" index="1" instance=ExtResource( 14 )]
-position = Vector2( 1167, -871 )
+position = Vector2( 1127, -802 )
 
 [node name="ZanahoriaLLave3" parent="Zanahorias" index="2" instance=ExtResource( 14 )]
-position = Vector2( 3555, -1391 )
+position = Vector2( 3444, -1190 )
 
 [node name="Portal" parent="." index="11"]
-position = Vector2( 1821, -2563 )
+position = Vector2( 1717, -2285 )
 proximo_nivel = "res://Juego/Menus/MenuVictoria.tscn"

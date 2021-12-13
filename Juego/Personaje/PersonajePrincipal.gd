@@ -82,7 +82,6 @@ func respawn():
 	if esta_vivo == true:	
 		esta_vivo = false
 		DatosPlayer.restar_vidas()
-		DatosPlayer.monedas_reset()
 		animacion_morir()
 		if DatosPlayer.vidas >=1:
 			yield(get_tree().create_timer(1), "timeout")

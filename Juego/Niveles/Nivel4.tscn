@@ -27,9 +27,11 @@ scale = Vector2( 0.5, 0.6 )
 
 [node name="PinchosTrampa" parent="Daño" index="1" instance=ExtResource( 5 )]
 position = Vector2( 644, 234 )
+cast_long = 500
 
 [node name="PinchosTrampa2" parent="Daño" index="2" instance=ExtResource( 5 )]
 position = Vector2( 557, 234 )
+cast_long = 500
 
 [node name="Pinchon" parent="Enemigos" index="0" instance=ExtResource( 3 )]
 position = Vector2( 2066, 359 )

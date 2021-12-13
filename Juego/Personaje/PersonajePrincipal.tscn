@@ -355,15 +355,15 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Correr",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Saltar",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Correr",
+"speed": 8.0
 } ]
 
 [node name="PersonajePrincipal" type="KinematicBody2D" groups=["jugadores"]]

@@ -31,15 +31,16 @@ position = Vector2( -873, 358 )
 
 [node name="PinchosTrampa" parent="Daño" index="1" instance=ExtResource( 8 )]
 position = Vector2( -1404, -204 )
+cast_long = 700
 
 [node name="Pinchos2" parent="Daño" index="2" instance=ExtResource( 9 )]
 position = Vector2( 1447, 186 )
 
 [node name="Pinchos3" parent="Daño" index="3" instance=ExtResource( 9 )]
-position = Vector2( 628, -443 )
+position = Vector2( 627, -578 )
 
 [node name="Pinchos4" parent="Daño" index="4" instance=ExtResource( 9 )]
-position = Vector2( 852, -439 )
+position = Vector2( 848, -575 )
 
 [node name="Pinchon" parent="Enemigos" index="0" instance=ExtResource( 6 )]
 position = Vector2( -591, 396 )
@@ -49,7 +50,7 @@ velocidad = 250.0
 position = Vector2( 739, 288 )
 
 [node name="Volon2" parent="Enemigos" index="2" instance=ExtResource( 7 )]
-position = Vector2( 344, -529 )
+position = Vector2( 344, -640 )
 
 [node name="PlataformaRosa" parent="Plataformas" index="0"]
 scale = Vector2( 1.5, 0.3 )
@@ -63,12 +64,12 @@ position = Vector2( 1523, -229 )
 scale = Vector2( 0.5, 0.3 )
 
 [node name="PlataformaNieve7" parent="Plataformas" index="3" instance=ExtResource( 3 )]
-position = Vector2( 746, -423 )
+position = Vector2( 742, -559 )
 scale = Vector2( 1.5, 0.4 )
 
 [node name="PlataformaNieve8" parent="Plataformas" index="4" instance=ExtResource( 3 )]
 modulate = Color( 0.607843, 0.145098, 0.819608, 1 )
-position = Vector2( 62, -651 )
+position = Vector2( 83, -680 )
 scale = Vector2( 0.5, 0.3 )
 
 [node name="PlataformaNieve2" parent="Plataformas" index="5" instance=ExtResource( 3 )]
@@ -107,7 +108,7 @@ position = Vector2( 1808, 64 )
 scale = Vector2( 0.6, 0.3 )
 
 [node name="PlataformaTrampa" parent="Plataformas" index="13" instance=ExtResource( 13 )]
-position = Vector2( 1202, -330 )
+position = Vector2( 1198, -466 )
 scale = Vector2( 1, 0.3 )
 
 [node name="MonedasBronce" parent="Monedas" index="0" instance=ExtResource( 11 )]
@@ -129,8 +130,8 @@ position = Vector2( 739, 5 )
 position = Vector2( -1400, 180 )
 
 [node name="ZanahoriaLLave3" parent="Zanahorias" index="2" instance=ExtResource( 5 )]
-position = Vector2( 341, -856 )
+position = Vector2( 284, -824 )
 
 [node name="Portal" parent="." index="11"]
-position = Vector2( 56, -681 )
+position = Vector2( 77, -710 )
 proximo_nivel = "res://Juego/Niveles/Nivel6.tscn"

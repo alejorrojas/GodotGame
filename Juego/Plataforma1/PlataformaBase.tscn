@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Recursos/PNG/Environment/ground_wood.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/PNG/Environment/ground_grass.png" type="Texture" id=1]
 
 [node name="PlataformaBase" type="StaticBody2D"]
 scale = Vector2( 0.3, 0.3 )

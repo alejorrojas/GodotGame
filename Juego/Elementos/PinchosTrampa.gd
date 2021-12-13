@@ -3,7 +3,7 @@ extends "res://Juego/Elementos/Pinchos.gd"
 onready var detectar_jugador = $DetectarJugador
 onready var animacion = $AnimationPlayer
 
-export var cast_long = 40
+export var cast_long = 400
 
 
 func _ready():

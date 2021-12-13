@@ -17,4 +17,5 @@ func _on_MenuPrincipal_pressed():
 func _on_Reintentar_pressed():
 # warning-ignore:return_value_discarded
 	MusicaGlobal.reset()
+	DatosPlayer.monedas_reset()
 	get_tree().change_scene(nivel_actual)
